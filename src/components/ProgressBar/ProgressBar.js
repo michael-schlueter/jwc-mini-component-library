@@ -31,6 +31,7 @@ const ProgressBar = ({ value, size }) => {
   }
 
   return (
+    // Using a div instead of a native progress element to be more flexible with styling
     <Wrapper
       role="progressbar"
       aria-valuenow={value}
@@ -63,6 +64,8 @@ const Wrapper = styled.div`
 
 const BarWrapper = styled.div`
   border-radius: 4px;
+
+  // The progress is rounded at the end and does not overflow out of the border (relevant for close to 100% progress)
   overflow: hidden;
 `;
 
